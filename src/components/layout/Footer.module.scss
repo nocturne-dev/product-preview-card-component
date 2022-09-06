@@ -1,0 +1,15 @@
+@use "../../styles" as s;
+
+.footer {
+  margin-inline: s.rem(16);
+  min-width: s.rem(250);
+
+  &__attribution {
+    font-size: s.rem(11);
+    text-align: center;
+
+    a {
+      color: hsl(228, 45%, 44%);
+    }
+  }
+}

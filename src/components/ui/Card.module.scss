@@ -1,0 +1,74 @@
+@use "../../styles" as s;
+
+.card {
+  margin: s.rem(28) s.rem(16);
+  display: grid;
+  grid-template-columns: 1fr;
+  min-width: s.rem(250);
+  max-width: s.rem(600);
+  border-radius: s.rem(8);
+  background-color: var(--white);
+
+  @include s.breakpoint-up(medium) {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 22vh s.rem(16) 18vh s.rem(16);
+  }
+
+  @include s.breakpoint-up(large) {
+    margin: 22vh auto 18vh auto;
+  }
+
+  &__image {
+    background-image: url("../../images/image-product-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: s.rem(8) s.rem(8) 0 0;
+    height: s.rem(240);
+
+    @include s.breakpoint-up(medium) {
+      background-image: url("../../images/image-product-desktop.jpg");
+      border-radius: s.rem(8) 0 0 s.rem(8);
+      height: 100%;
+    }
+  }
+
+  &__details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: s.rem(20);
+    padding: s.rem(25);
+
+    @include s.breakpoint-up(large) {
+      padding: s.rem(25) s.rem(32);
+    }
+  }
+
+  &__type {
+    grid-column: 1/3;
+    text-transform: uppercase;
+    color: var(--dark-grayish-blue);
+    letter-spacing: s.rem(5);
+    margin-bottom: s.rem(20);
+  }
+
+  &__title {
+    grid-column: 1/3;
+    margin-bottom: s.rem(22);
+  }
+
+  &__description {
+    grid-column: 1/3;
+    margin-bottom: s.rem(31);
+    line-height: 1.8;
+  }
+
+  &__discount {
+    color: var(--dark-cyan);
+    margin-bottom: s.rem(21);
+  }
+
+  &__original {
+    text-decoration: line-through;
+    align-self: center;
+  }
+}
